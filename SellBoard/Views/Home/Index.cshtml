@@ -1,8 +1,184 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{ 
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="~/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="~/styles/style.css">
+</head>
+
+<body>
+
+    <section class="container-fluid">
+        <section class="row">
+            <div class="col-12">
+                <div class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close">&times;</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="container-fluid">
+
+        <section class="row">
+            <!-- Left Section -->
+            <section class="col-xl-4 col-lg-4 col-4 left">
+                <!-- Logo -->
+                <div class="logo-section">
+                    <img src="" alt="">
+                </div>
+
+                <!-- Title -->
+                <div class="title-section">
+                    <h1 class="title">
+                        Lets <br> Make <br> It <br> Happen
+                    </h1>
+                </div>
+
+                <!-- Time Section -->
+                <div class="time">
+                    <div class="clock">
+
+                    </div>
+
+                    <div class="top">
+                        <span>15 : 00 : 00</span>
+                    </div>
+                    <div class="bottom">
+                        <span>July 11 2019</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Right Section -->
+            <section class="col-xl-8 col-lg-8 col-8 right">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 left-section">
+                            <div class="left-section-content">
+                                <header class="text-center">
+                                    <h4>Today</h4>
+                                </header>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 top-box">
+                                            <div class="item">
+                                                <div class="title">Title</div>
+                                                <div class="value">98</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 top-box">
+                                            <div class="item">
+                                                <div class="title">Title</div>
+                                                <div class="value">33</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 bottom-box">
+                                            <div class="item">
+                                                <div class="title">CR</div>
+                                                <div class="value">18.7</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 bottom-box">
+                                            <div class="item">
+                                                <div class="title">Title</div>
+                                                <div class="value">7</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 right-section">
+                            <div class="right-section-content">
+                                <header class="text-center">
+                                    <h4>Week</h4>
+                                </header>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 top-box">
+                                            <div class="item">
+                                                <div class="title">Title</div>
+                                                <div class="value">160</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 top-box">
+                                            <div class="item">
+                                                <div class="title">Title</div>
+                                                <div class="value">110</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 bottom-box">
+                                            <div class="item">
+                                                <div class="title">CR</div>
+                                                <div class="value">11.4</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 bottom-box">
+                                            <div class="item">
+                                                <div class="title">Title</div>
+                                                <div class="value">8</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 middle">
+                            <div class="middle-content">
+                                <div id="left">
+                                    <h3>Month - July 2019</h3>
+                                </div>
+                                <div id="center">
+                                    <h5>Convertion</h5>
+                                </div>
+                                <div id="right">
+                                    <h2>9.6%</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 bottom">
+                            <div class="bottom-section">
+                                <div class="bottom-left-section">
+                                    <div class="title">Title</div>
+                                    <div class="value">380</div>
+                                </div>
+                                <div class="bottom-right-section">
+                                    <div class="title">Title</div>
+                                    <div class="value">752</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+
+    </section>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/popper.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+﻿@{
+    UnitOfWork Db = new UnitOfWork();
+}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Telegram Authentication</title>
+    <!-- Favicon-->
+    <link rel="icon" href="~/assets/images/favicon.ico" type="image/x-icon">
+    <!-- Plugins Core Css -->
+    <link href="~/assets/css/app.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/extra_pages.css" rel="stylesheet" />
+</head>
+
+<body class="login-page">
+    @if (ViewData.ModelState.GetErrors() != null)
+    {
+        <div class="alert bg-pink alert-dismissible" role="alert" style="text-align:center;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            @Html.Raw(ViewData.ModelState.GetErrors())
+        </div>
+    }
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert bg-green alert-dismissible" role="alert" style="text-align:center;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            @TempData["Message"]
+        </div>
+    }
+    <div class="limiter">
+        <div class="container-login100 page-background">
+            <div class="wrap-login100">
+                <form asp-controller="Account" asp-action="Login" method="post" id="login" tabindex="500" onsubmit="return ConfirmLoging()">
+                    <span class="login100-form-logo">
+                        <img alt="" src="../../assets/images/loading.png">
+                    </span>
+                    <span class="login100-form-title p-b-34 p-t-27">
+                        Log in
+                    </span>
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <input class="input100" type="text" id="loginEmail" name="Email" placeholder="Username">
+                        <i class="material-icons focus-input1001">person</i>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <input class="input100" type="password" id="loginPass" name="Password" placeholder="Password">
+                        <i class="material-icons focus-input1001">lock</i>
+                    </div>
+                    <div class="contact100-form-checkbox">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="true" name="RememberMe"> Remember me
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                    <div class="text-center p-t-50">
+                        <a class="txt1" href="/Account/ForgetPassword">
+                            Forgot Password?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Plugins Js -->
+<script src="~/assets/js/app.min.js"></script>
+<!-- Extra page Js -->
+<script src="~/assets/js/pages/examples/pages.js"></script>
+<script src="~/js/site.js"></script>
+<script>
+    function ConfirmLoging() {
+        var email = $('#loginEmail').val();
+        var pass = $('#loginPass').val();
+        email = String(email).trim();
+        pass = String(pass).trim();
+        if (email == null || email == '') {
+            showHtmlMessage('Error', 'Please Enter Email');
+            return false;
+        }
+        if (pass == null || pass == '') {
+
+            showHtmlMessage('Error', 'Please Enter Pass');
+            return false;
+        }
+
+        return true;
+    }
+    function showHtmlMessage(title, message) {
+        swal({
+            title: "<b>" + title + "</b> ",
+            text: "<span style=\"color: #CC0000\">" + message + " </span > ",
+            html: true
+        });
+    }
+</script>

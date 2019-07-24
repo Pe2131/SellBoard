@@ -1,0 +1,315 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ======== Left ======== */
+
+.left {
+    width: 100%;
+    height: 100vh;
+    background: #1d1d1d;
+}
+
+.left .logo-section {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 60%;
+    height: 12%;
+    background: tomato;
+}
+
+.left .logo-section img {
+    width: 100%;
+    left: 100%;
+}
+
+.left .title-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+}
+
+.left .title {
+    font-family: sans-serif;
+    font-size: 11vh;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.left .time {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15%;
+}
+
+.left .time .top, .left .time .bottom {
+    display: flex;
+    align-items: center;
+    padding-left: 20%;
+}
+
+.left .time .top {
+    height: 50%;
+    background: #2b2a2a;
+}
+
+.left .time .bottom {
+    height: 50%;
+    background: #3d3d3d;
+}
+
+.left .time span {
+    font-size: 3vh;
+    font-weight: bold;
+    color: #fff;
+}
+
+.left .time .clock {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: black;
+}
+
+/* ======== Right ======== */
+
+.right {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+}
+
+.right .right-section, .right .left-section {
+    height: 63vh;
+}
+
+.right .right-section .right-section-content, .right .left-section .left-section-content {
+    width: 100%;
+    height: 100%;
+    background: #333333;
+}
+
+.top-box {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 5px;
+}
+
+.bottom-box {
+    width: 50%;
+    height: 50%;
+    margin-top: 5px;
+}
+
+.right header {
+    width: 100%;
+    height: 10%;
+    background: #1d1d1d;
+}
+
+.right header h4 {
+    font-size: 5vh;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 6vh;
+}
+
+.right .container {
+    position: relative;
+    padding: 20px;
+}
+
+.right .item {
+    width: 100%;
+    height: 100%;
+}
+
+.right .container .item .title {
+    width: 100%;
+    height: 5%;
+    background: red;
+    font-size: 5vh;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.right .container .item .value {
+    background: black;
+    font-size: 9vh;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+}
+
+.right .middle {
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    margin-top: 10px;
+}
+
+.right .middle .middle-content {
+    width: 100%;
+    height: 100%;
+    background: #1d1d1d;
+    display: flex;
+}
+
+#left, #center, #right {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.right .middle .middle-content #left {
+    justify-content: start;
+    width: 50%;
+    background: #1d1d1d;
+}
+
+.right .middle .middle-content #left h3 {
+    font-size: 5vh;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.right .middle .middle-content #center {
+    width: 17%;
+    background: #333;
+}
+
+.right .middle .middle-content #center h5 {
+    font-size: 3vh;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 6vh;
+}
+
+.right .middle .middle-content #right {
+    width: 33%;
+    background: #000;
+}
+
+.right .middle .middle-content #right h2 {
+    font-size: 5vh;
+    color: red;
+    text-shadow: 1px 1px 0 white;
+}
+
+.right .bottom {
+    position: relative;
+    width: 100%;
+    height: 19vh;
+    margin-top: 10px;
+}
+
+.right .bottom .bottom-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.right .bottom .bottom-section .title {
+    width: 30%;
+    background: red;
+    font-size: 7vh;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 19vh;
+}
+
+.right .bottom .bottom-section .value {
+    width: 70%;
+    font-size: 10vh;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 19vh;
+}
+
+.right .bottom .bottom-section .bottom-left-section {
+    display: flex;
+    width: 50%;
+    background: black;
+    margin-right: 15px;
+}
+
+.right .bottom .bottom-section .bottom-right-section {
+    display: flex;
+    width: 50%;
+    background: black;
+    margin-left: 15px;
+}
+
+/* ======== Modal ======== */
+
+.modal {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    visibility: hidden;
+    transform: scale(0);
+    transition: .5s;
+}
+
+body:hover .modal {
+    visibility: visible;
+}
+
+.modal .modal-dialog {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.modal .modal-dialog .modal-content {
+    width: 100vw !important;
+    height: 100vh;
+    border-radius: 0;
+}
+
+/* ======== Responsive ======== */
+
+@media screen and (min-height: 700px) {
+    .right .right-section, .right .left-section {
+        height: 66vh;
+    }
+    .top-box {
+        width: 50%;
+        height: 50%;
+        margin-bottom: 15px;
+    }
+    .bottom-box {
+        width: 50%;
+        height: 50%;
+        margin-top: 15 px;
+    }
+    .right .container .item .title {
+        font-size: 5vh;
+    }
+    .right .container .item .value {
+        line-height: 18vh;
+    }
+    .left .title {
+        font-size: 10vh;
+    }
+}

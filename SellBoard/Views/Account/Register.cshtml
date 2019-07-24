@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Telegram Authentication</title>
+    <!-- Favicon-->
+    <link rel="icon" href="~/assets/images/favicon.ico" type="image/x-icon">
+    <!-- Plugins Core Css -->
+    <link href="~/assets/css/app.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/extra_pages.css" rel="stylesheet" />
+</head>
+<body class="login-page">
+    <div class="limiter">
+        <div class="container-login100 page-background">
+            <div class="wrap-login100">
+                <form asp-controller="Account" asp-action="Register" id="register" method="post" tabindex="502" onsubmit=" return ConfirmRegister()">
+                    <span class="login100-form-logo">
+                        <img alt="" src="../../assets/images/loading.png">
+                    </span>
+                    <span class="login100-form-title p-b-34 p-t-27">
+                        Registration
+                    </span>
+                    <div class="row">
+                        <div class="col-lg-6 p-t-20">
+                            <div class="wrap-input100 validate-input" data-validate="Enter username">
+                                <input class="input100" type="text" name="Email" placeholder="Username" id="RegEmail">
+                                <i class="material-icons focus-input1001">person</i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="wrap-input100 validate-input" data-validate="Enter password">
+                                <input class="input100" type="password" name="Password" placeholder="Password" id="RegPass">
+                                <i class="material-icons focus-input1001">person</i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 p-t-20">
+                            <div class="wrap-input100 validate-input" data-validate="Enter password again">
+                                <input class="input100" type="password" name="ConfirmPassword" placeholder="Confirm password" id="RegConfPass">
+                                <i class="material-icons focus-input1001">person</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact100-form-checkbox">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value=""> Remember me
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Sign Up
+                        </button>
+                    </div>
+                    <div class="text-center p-t-50">
+                        <a class="txt1" href="sign-in.html">
+                            You already have a membership?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Plugins Js -->
+    <script src="~/assets/js/app.min.js"></script>
+    <!-- Extra page Js -->
+    <script src="~/assets/js/pages/examples/pages.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+
+</html>
+<script>
+    function ConfirmRegister() {
+        var Email = String($('#RegEmail').val()).trim();
+        var Password = String($('#RegPass').val()).trim();
+        var ConfirmPassword = String($('#RegConfPass').val()).trim();
+        if (Email == null || Email == "") {
+            showHtmlMessage('Error', 'Please Enter Email');
+            return false;
+        }
+        if (Password == null || Password == "") {
+            showHtmlMessage('Error', 'Please Enter Password');
+            return false;
+        }
+        if (ConfirmPassword == null || ConfirmPassword == "") {
+            showHtmlMessage('Error', 'Please Enter ConfirmPass');
+            return false;
+        }
+
+        if (ConfirmPassword != Password) {
+            showHtmlMessage('Error', 'password and Confirm password arent equal');
+            return false;
+        }
+        if (chkpwd()) {
+            showHtmlMessage('Error', chkpwd());
+            return false;
+        }
+        if (!validateEmail(Email)) {
+            showHtmlMessage('Error', 'email format is incorrect!');
+            return false;
+        }
+        return true;
+
+    }
+    function showHtmlMessage(title, message) {
+        swal({
+            title: "<b>" + title + "</b> ",
+            text: "<span style=\"color: #CC0000\">" + message + " </span> ",
+            html: true
+        });
+    }
+    function chkpwd() {
+        var str = document.getElementById('RegPass').value;
+        if (str.length <= 6) {
+            return "password must be has morethan 6 character";
+        }
+        else if (str.search(/[0-9]/) == -1) {
+            return "password mus has number";
+        }
+        return null;
+    }
+</script>
