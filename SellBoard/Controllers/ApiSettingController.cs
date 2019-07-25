@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Model;
 using DAL.Model.Tables;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SellBoard.Controllers
 {
+    [Authorize]
     public class ApiSettingController : Controller
     {
         private readonly ApplicationDbContext _context;
