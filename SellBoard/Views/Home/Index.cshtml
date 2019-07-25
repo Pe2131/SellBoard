@@ -1,5 +1,5 @@
-﻿
-@{ 
+﻿@model ViewModel_ShowData
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -80,13 +80,13 @@
                                         <div class="col-6 top-box">
                                             <div class="item">
                                                 <div class="title">Title</div>
-                                                <div class="value">98</div>
+                                                <div class="value">@Model.TodayType2</div>
                                             </div>
                                         </div>
                                         <div class="col-6 top-box">
                                             <div class="item">
                                                 <div class="title">Title</div>
-                                                <div class="value">33</div>
+                                                <div class="value">@Model.TodayType4</div>
                                             </div>
                                         </div>
                                         <div class="col-6 bottom-box">
@@ -115,13 +115,13 @@
                                         <div class="col-6 top-box">
                                             <div class="item">
                                                 <div class="title">Title</div>
-                                                <div class="value">160</div>
+                                                <div class="value">@Model.WeeklyType2</div>
                                             </div>
                                         </div>
                                         <div class="col-6 top-box">
                                             <div class="item">
                                                 <div class="title">Title</div>
-                                                <div class="value">110</div>
+                                                <div class="value">@Model.WeeklyType4</div>
                                             </div>
                                         </div>
                                         <div class="col-6 bottom-box">
@@ -179,6 +179,22 @@
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/script.js"></script>
+    <script>
+        function GetDataFromServer() {
+            $.ajax({
+                type: "Get",
+                alowCache: false,
+                url: "Home/ShowDataForView",
+                success: function (response) {
+                    var jsonresult = JSON.parse(response);
+                    console.log(response);
+                },
+                error: function () {
+                    console.log("Error");
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -42,7 +42,7 @@ namespace Api
         //    }
 
         //}
-        public static async Task<GetModel> CallWebAPIAsyncPost(string BaseUrl, string postUrl, string username, string Password, string ApiKey)
+        public static async Task<GetModel> CallWebAPIAsyncPost(string BaseUrl, string postUrl, string username, string Password, string ApiKey,SendModel sendModel)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace Api
                         client.DefaultRequestHeaders.Add("x-trackbox-password", Password);
                         client.DefaultRequestHeaders.Add("x-api-key", ApiKey);
                         //POST Method
-                        SendModel model = new SendModel { from = DateTime.Now.ToString("yyyy-MM-dd  00:00:00"), to = DateTime.Now.ToString("yyyy-MM-dd  23:59:59"), type = "3" };
+                        SendModel model =sendModel;
                         HttpResponseMessage responsePost = await client.PostAsJsonAsync(postUrl, model);
                         if (responsePost.IsSuccessStatusCode)
                         {
