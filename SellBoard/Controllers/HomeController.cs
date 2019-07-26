@@ -18,8 +18,8 @@ namespace SellBoard.Controllers
         {
             try
             {
-                //ViewModel_ShowData model = await GetDataFromServerAsync();
-                return View(null);
+                ViewModel_ShowData model = await GetDataFromServerAsync();
+                return View(model);
             }
             catch (Exception e)
             {
