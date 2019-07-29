@@ -11,7 +11,7 @@ namespace DAL.Model
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           // optionsBuilder.UseSqlServer("Server =.; Database = SellBoard; User Id = pe2131; Password = 2131; MultipleActiveResultSets = true");
+           //optionsBuilder.UseSqlServer("Server =.; Database = SellBoard; User Id = pe2131; Password = 2131; MultipleActiveResultSets = true");
             optionsBuilder.UseSqlServer("Server =.\\SQLEXPRESS; Database = SellBoard; User Id = sa; Password = 12345678; MultipleActiveResultSets = true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

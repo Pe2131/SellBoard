@@ -281,12 +281,73 @@ body:hover .modal {
     padding: 0;
 }
 
+.modal-content {
+    background: black;
+}
+
+.modal-header {
+    border: none;
+}
+
+.close {
+    color: white;
+}
+
+#bitcoin {
+    padding-top: 80px;
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: #888888;
+}
+
+.path {
+    stroke-dasharray: 2110;
+    stroke-dashoffset: 2110;
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: dash 6s linear infinite;
+    fill-opacity: 0;
+    stroke: orange;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 2110;
+        opacity: 0;
+        stroke: orange;
+    }
+
+    15% {
+        opacity: 1;
+        stroke: orange;
+    }
+
+    70% {
+        opacity: 1;
+        stroke: orange;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+        stroke: yellow;
+    }
+}
+
 .modal .modal-dialog .modal-content {
     width: 100vw !important;
     height: 100vh;
     border-radius: 0;
 }
-
+#change {
+    color: white;
+    margin-left: 41%;
+    margin-top: 20px;
+    font-size: 40px;
+    text-decoration: underline;
+}
 /* ======== Responsive ======== */
 
 @media screen and (min-height: 700px) {

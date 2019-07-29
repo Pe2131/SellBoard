@@ -9,5 +9,6 @@ namespace Api
         public string from { get; set; }
         public string to { get; set; }
         public string type { get; set; }
+        public string offset { get; set; }
     }
 }
